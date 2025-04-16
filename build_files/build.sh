@@ -69,7 +69,7 @@ systemctl enable open-fprintd-resume.service open-fprintd-suspend.service open-f
 # edit gpu switching config to enable seamless hotplug
 touch /etc/supergfxd.conf
 echo '{
-“mode”: “Hybrid”,
+“mode”: “Integrated”,
 “vfio_enable”: true,
 “vfio_save”: false,
 “always_reboot”: false,
