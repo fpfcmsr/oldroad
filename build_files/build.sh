@@ -27,17 +27,10 @@ dnf5 -y copr enable bazzite-org/webapp-manager
 dnf5 -y install webapp-manager 
 dnf5 -y copr disable bazzite-org/webapp-manager
 
-#copr install kde-kup for backups
-#dnf5 -y copr enable justinz/kup
-#dnf5 install kde-kup
-#dnf5 -y copr disable justinz/kup
-
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+#copr install python validity for fingerprint reader
+dnf5 -y copr enable sneexy/python-validity
+dnf5 -y install open-fprintd fprintd-clients fprintd-clients-pam python3-validity
+dnf5 -y copr disable sneexy/python-validity
 
 #install specific brother printers
 rm /opt
@@ -71,6 +64,7 @@ ln -s /var/root /root
 systemctl enable supergfxd.service 
 systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
+systemctl enable open-fprintd-resume.service open-fprintd-suspend.service open-fprintd.service python3-validity.service
 
 # edit gpu switching config to enable seamless hotplug
 touch /etc/supergfxd.conf
