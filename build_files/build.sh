@@ -19,7 +19,7 @@ dnf5 install -y mscore-fonts-all
 
 #for phone integration via usb
 dnf5 -y copr enable zeno/scrcpy
-dnf5 install -y scrcpy 
+dnf5 -y install scrcpy 
 dnf5 -y copr disable zeno/scrcpy
 
 #copr install webapp manager from bazzite
