@@ -45,20 +45,6 @@ dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
 
-# install dolphin helper scripts
-cd /tmp
-git clone https://github.com/cfgnunes/nautilus-scripts.git
-cd nautilus-scripts
-rm /tmp/nautilus-scripts/install.sh
-cp /ctx/install.sh /tmp/nautilus-scripts/install.sh
-chmod +x install.sh
-
-rm /root
-mkdir /root
-bash install.sh
-mv /root /usr/share/factory
-ln -s /var/root /root
-
 #### Example for enabling a System Unit File
 
 systemctl enable supergfxd.service 
