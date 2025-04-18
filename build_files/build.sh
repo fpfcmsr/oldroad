@@ -65,15 +65,3 @@ systemctl enable supergfxd.service
 systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
 systemctl enable open-fprintd-resume.service open-fprintd-suspend.service open-fprintd.service python3-validity.service
-
-# edit gpu switching config to enable seamless hotplug
-touch /etc/supergfxd.conf
-echo '{
-“mode”: “Integrated”,
-“vfio_enable”: true,
-“vfio_save”: false,
-“always_reboot”: false,
-“no_logind”: true,
-“logout_timeout_s”: 60,
-“hotplug_type”: “Asus”
-}' >> /etc/supergfxd.conf
