@@ -47,10 +47,3 @@ curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.br
 dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
-
-#### Example for enabling a System Unit File
-
-systemctl enable supergfxd.service 
-systemctl disable nvidia-persistenced
-systemctl mask nvidia-persistenced
-systemctl enable open-fprintd-resume.service open-fprintd-suspend.service open-fprintd.service python3-validity.service
