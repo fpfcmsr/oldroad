@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sudo systemctl disable nvidia-persistenced
+sudo systemctl mask nvidia-persistenced
+sudo systemctl enable open-fprintd-resume.service open-fprintd-suspend.service open-fprintd.service python3-validity.service
+
 # do the interactive stuff first
 sudo authselect enable-feature with-fingerprint
 sudo authselect apply-changes
