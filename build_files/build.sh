@@ -12,7 +12,10 @@ set -ouex pipefail
 # this installs a package from fedora repos
 
 #install packages for dolphin shortcuts
-dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip foremost perl-Image-ExifTool rdfind rhash testdisk expect 
+dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip foremost perl-Image-ExifTool rdfind rhash testdisk expect
+
+# install sunshine
+dnf5 -y install sunshine
 
 #microsoft fonts install
 dnf5 -y install mscore-fonts-all 
