@@ -55,6 +55,8 @@ echo "Downloading Bitwarden from $URL"
 curl -sL -o /tmp/rpms/bitwarden-latest.rpm "$URL"
 
 #install all the downloaded rpms
+cd /tmp
+ls
 dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
