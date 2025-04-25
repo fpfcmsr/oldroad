@@ -57,7 +57,8 @@ URL=$(curl -s https://api.github.com/repos/bitwarden/clients/releases | jq -r 'f
 
 if [ -n "$URL" ]; then
     echo "Downloading Bitwarden from $URL"
-    curl -sL -o /bitwarden-latest.rpm "$URL"
+    curl -sL -o /tmp/bitwarden-latest.rpm "$URL"
+    dnf5 -y install /tmp/bitwarden-latest.rpm
 else
     echo "--- Could not find Bitwarden RPM URL"
     exit 1
