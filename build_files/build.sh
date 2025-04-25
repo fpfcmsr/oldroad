@@ -48,8 +48,6 @@ curl --retry 3 -Lo /tmp/rpms/brscan4-0.4.11-1.x86_64.rpm "https://download.broth
 curl --retry 3 -Lo /tmp/rpms/brscan-skey-0.3.2-0.x86_64.rpm "https://download.brother.com/welcome/dlf006650/brscan-skey-0.3.2-0.x86_64.rpm"
 curl --retry 3 -Lo /tmp/rpms/brother-udev-rule-type1-1.0.2-0.noarch.rpm "https://download.brother.com/welcome/dlf103900/brother-udev-rule-type1-1.0.2-0.noarch.rpm"
 curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.brother.com/welcome/dlf105190/brmfcfaxdrv-2.0.2-1.x86_64.rpm"
-mv /opt /usr/share/factory
-ln -s /var/opt /opt
 
 # get and download / install bitwarden rpm
 URL=$(curl -s https://api.github.com/repos/bitwarden/clients/releases | jq -r 'first(.[] | .assets[]? | select(.browser_download_url | endswith(".rpm")) | .browser_download_url)')
@@ -58,3 +56,5 @@ curl -sL -o /tmp/rpms/bitwarden-latest.rpm "$URL"
 
 #install all the downloaded rpms
 dnf5 install -y /tmp/rpms/*
+mv /opt /usr/share/factory
+ln -s /var/opt /opt
