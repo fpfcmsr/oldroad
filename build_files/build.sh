@@ -27,9 +27,9 @@ dnf5 -y install open-fprintd fprintd-clients fprintd-clients-pam python3-validit
 dnf5 -y copr disable sneexy/python-validity
 
 #copr for acpi-call for powering off nvidia gpu under nouveau
-dnf5 -y enable cr7pt0gr4ph7/acpi_call 
+dnf5 -y copr enable cr7pt0gr4ph7/acpi_call 
 dnf5 -y install acpi_call-kmod acpi_call-kmod-common
-dnf5 -y disable cr7pt0gr4ph7/acpi_call 
+dnf5 -y copr disable cr7pt0gr4ph7/acpi_call 
 
 #install specific brother printers
 rm /opt
