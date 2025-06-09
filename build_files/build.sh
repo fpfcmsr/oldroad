@@ -74,6 +74,13 @@ depmod -a ${KERNEL}
 # Afficher un message de confirmation
 echo "Le module acpi_call a été compilé et déplacé avec succès pour le noyau ${KERNEL}."
 
+
+#try to use bbswitch
+cd /tmp
+git clone https://github.com/Bumblebee-Project/bbswitch.git
+cd bbswitch
+make -f Makefile.dkms
+
 #install specific brother printers
 rm /opt
 mkdir /opt
