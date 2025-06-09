@@ -76,7 +76,7 @@ echo "Le module acpi_call a été compilé et déplacé avec succès pour le noy
 
 
 #try to use bbswitch
-git clone https://github.com/Bumblebee-Project/bbswitch.git /tpm/bbswitch
+git clone https://github.com/Bumblebee-Project/bbswitch.git /tmp/bbswitch
 cd /tmp/bbswitch
 make -C /usr/src/kernels/${KERNEL} M=$(pwd) Makefile
 
