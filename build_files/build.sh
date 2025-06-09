@@ -76,10 +76,13 @@ echo "Le module acpi_call a été compilé et déplacé avec succès pour le noy
 
 
 #try to use bbswitch
-cd /tmp
-git clone https://github.com/Bumblebee-Project/bbswitch.git
-cd bbswitch
-make -f Makefile.dkms
+git clone https://github.com/Bumblebee-Project/bbswitch.git /tpm/bbswitch
+cd /tmp/bbswitch
+make -C /usr/src/kernels/${KERNEL} M=$(pwd) Makefile
+
+mkdir -p /usr/lib/modules/${KERNEL}/extra/bbswitch/
+mv bbswitch.ko /usr/lib/modules/${KERNEL}/extra/bbswitch/
+depmod -a ${KERNEL}
 
 #install specific brother printers
 rm /opt
