@@ -7,7 +7,7 @@ set -ouex pipefail
 
 #install packages for dolphin shortcuts
 #dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip foremost perl-Image-ExifTool rdfind rhash testdisk expect
-dnf5 -y install recoll perl-Image-ExifToll # the others can be installed with brew
+dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with brew
 
 # btrfs assistant
 #dnf5 -y install btrfs-assistant
