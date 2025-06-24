@@ -22,7 +22,12 @@ dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with br
 #dnf5 -y install webapp-manager 
 #dnf5 -y copr disable bazzite-org/webapp-manager
 
-mkdir /var/root/.gnupg
+rm /opt
+mkdir /opt
+
+rm /root
+mkdir /root
+#mkdir /root/.gnupg
 
 #copr install python validity for fingerprint reader
 dnf5 -y copr enable sneexy/python-validity
@@ -30,8 +35,6 @@ dnf5 -y install open-fprintd fprintd-clients fprintd-clients-pam python3-validit
 dnf5 -y copr disable sneexy/python-validity
 
 #install specific brother printers
-#rm /opt
-#mkdir /opt
 mkdir /tmp/rpms
 curl --retry 3 -Lo /tmp/rpms/mfcl2710dwpdrv-4.0.0-1.i386.rpm "https://download.brother.com/welcome/dlf103525/mfcl2710dwpdrv-4.0.0-1.i386.rpm"
 curl --retry 3 -Lo /tmp/rpms/brscan4-0.4.11-1.x86_64.rpm "https://download.brother.com/welcome/dlf105203/brscan4-0.4.11-1.x86_64.rpm"
@@ -45,12 +48,18 @@ curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.br
 #curl -sL -o /tmp/rpms/bitwarden-latest.rpm "$URL"
 
 #install all the downloaded rpms
-#dnf5 install -y /tmp/rpms/*
-mv /opt /usr/share/factory
-mv /root /usr/share/factory
-#ln -s /var/opt /opt
+dnf5 install -y /tmp/rpms/*
+
 
 #microsoft fonts install
 dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
+mv /opt /usr/share/factory
+ln -s /var/opt /opt
+ls -a /usr/share/factory/opt/
+
+mv /root /usr/share/factory
+ln -s /var/root /root
+ls -a /usr/share/factory/root/
 
