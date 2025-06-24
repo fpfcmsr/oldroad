@@ -28,8 +28,8 @@ dnf5 -y install open-fprintd fprintd-clients fprintd-clients-pam python3-validit
 dnf5 -y copr disable sneexy/python-validity
 
 #install specific brother printers
-rm /opt
-mkdir /opt
+#rm /opt
+#mkdir /opt
 mkdir /tmp/rpms
 curl --retry 3 -Lo /tmp/rpms/mfcl2710dwpdrv-4.0.0-1.i386.rpm "https://download.brother.com/welcome/dlf103525/mfcl2710dwpdrv-4.0.0-1.i386.rpm"
 curl --retry 3 -Lo /tmp/rpms/brscan4-0.4.11-1.x86_64.rpm "https://download.brother.com/welcome/dlf105203/brscan4-0.4.11-1.x86_64.rpm"
@@ -43,9 +43,10 @@ curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.br
 #curl -sL -o /tmp/rpms/bitwarden-latest.rpm "$URL"
 
 #install all the downloaded rpms
-dnf5 install -y /tmp/rpms/*
+#dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
-ln -s /var/opt /opt
+mv /root /usr/share/factory
+#ln -s /var/opt /opt
 
 #microsoft fonts install
 dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
