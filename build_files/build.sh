@@ -30,6 +30,7 @@ dnf5 -y copr disable sneexy/python-validity
 #install specific brother printers
 #rm /opt
 #mkdir /opt
+mkdir /root/.gnupg
 mkdir /tmp/rpms
 curl --retry 3 -Lo /tmp/rpms/mfcl2710dwpdrv-4.0.0-1.i386.rpm "https://download.brother.com/welcome/dlf103525/mfcl2710dwpdrv-4.0.0-1.i386.rpm"
 curl --retry 3 -Lo /tmp/rpms/brscan4-0.4.11-1.x86_64.rpm "https://download.brother.com/welcome/dlf105203/brscan4-0.4.11-1.x86_64.rpm"
