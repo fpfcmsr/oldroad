@@ -34,6 +34,11 @@ dnf5 -y copr enable sneexy/python-validity
 dnf5 -y install open-fprintd fprintd-clients fprintd-clients-pam python3-validity
 dnf5 -y copr disable sneexy/python-validity
 
+#handheld daemon
+sudo dnf5 -y copr enable hhd-dev/hhd
+sudo dnf5 -y install hhd adjustor hhd-ui
+sudo dnf5 -y copr disable hhd-dev/hhd
+
 #install specific brother printers
 mkdir /tmp/rpms
 curl --retry 3 -Lo /tmp/rpms/mfcl2710dwpdrv-4.0.0-1.i386.rpm "https://download.brother.com/welcome/dlf103525/mfcl2710dwpdrv-4.0.0-1.i386.rpm"
