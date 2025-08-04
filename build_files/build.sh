@@ -22,11 +22,11 @@ dnf5 -y copr enable bazzite-org/webapp-manager
 dnf5 -y install webapp-manager 
 dnf5 -y copr disable bazzite-org/webapp-manager
 
-#rm /opt
-#mkdir /opt
+rm /opt
+mkdir /opt
 
-#rm /root
-#mkdir /root
+rm /root
+mkdir /root
 
 #copr install python validity for fingerprint reader
 #dnf5 -y copr enable sneexy/python-validity
@@ -59,11 +59,11 @@ dnf5 install -y /tmp/rpms/*
 #dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
 #rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
-#mv /opt /usr/share/factory
-#ln -s /var/opt /opt
-#ls -a /usr/share/factory/opt/
+mv /opt /usr/share/factory
+ln -s /var/opt /opt
+ls -a /usr/share/factory/opt/
 
-#mv /root /usr/share/factory
-#ln -s /var/root /root
-#ls -a /usr/share/factory/root/
+mv /root /usr/share/factory
+ln -s /var/root /root
+ls -a /usr/share/factory/root/
 
