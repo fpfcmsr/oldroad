@@ -9,6 +9,8 @@ set -ouex pipefail
 #dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip foremost perl-Image-ExifTool rdfind rhash testdisk expect
 dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with brew
 
+#for acpi event stuff, good for monitoring multimonitor events
+dnf5 -y install acpid
 # btrfs assistant
 #dnf5 -y install btrfs-assistant
 
