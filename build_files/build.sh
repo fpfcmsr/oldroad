@@ -13,7 +13,7 @@ dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with br
 dnf5 -y install acpid
 
 #kdeconnect
-dnf5 -y install kdeconnect
+dnf5 -y install kde-connect
 
 # btrfs assistant
 #dnf5 -y install btrfs-assistant
