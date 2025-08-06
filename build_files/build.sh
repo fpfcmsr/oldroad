@@ -11,6 +11,10 @@ dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with br
 
 #for acpi event stuff, good for monitoring multimonitor events
 dnf5 -y install acpid
+
+#kdeconnect
+dnf5 -y install kdeconnect
+
 # btrfs assistant
 #dnf5 -y install btrfs-assistant
 
