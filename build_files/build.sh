@@ -39,13 +39,13 @@ curl -sL -o /tmp/rpms/bitwarden-latest.rpm "$URL"
 dnf5 install -y /tmp/rpms/*
 
 #ensure things downloaded to /opt and /root are present in final image and clean up symlinks
-mkdir /usr/share/factory/opt
-mv /opt /usr/share/factory/opt
+#mkdir /usr/share/factory/opt
+mv /opt /usr/share/factory
 ln -s /var/opt /opt
 ls -a /usr/share/factory/opt
 
-mkdir /usr/share/factory/root
-mv /root /usr/share/factory/root
+#mkdir /usr/share/factory/root
+mv /root /usr/share/factory
 ln -s /var/root /root
 ls -a /usr/share/factory/root
 
