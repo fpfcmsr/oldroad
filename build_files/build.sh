@@ -24,8 +24,10 @@ rm /root
 mkdir /root
 
 #get terra repo
-dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+#dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+dnf5 -y enable terra-release
 dnf5 -y install zed
+dnf5 -y disable terra-release
 
 #create directory for custom rpm download and install
 mkdir /tmp/rpms
