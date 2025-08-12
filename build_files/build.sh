@@ -36,6 +36,24 @@ mkdir /tmp/rpms
 URL=$(curl -s https://api.github.com/repos/bitwarden/clients/releases | jq -r 'first(.[] | .assets[]? | select(.browser_download_url | endswith(".rpm")) | .browser_download_url)')
 echo "Downloading Bitwarden from $URL"
 curl -sL -o /tmp/rpms/bitwarden-latest.rpm "$URL"
+#bitwarden policy file
+touch /usr/share/polkit-1/actions/com.bitwarden.Bitwarden.policy
+echo '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+
+<policyconfig>
+    <action id="com.bitwarden.Bitwarden.unlock">
+      <description>Unlock Bitwarden</description>
+      <message>Authenticate to unlock Bitwarden</message>
+      <defaults>
+        <allow_any>no</allow_any>
+        <allow_inactive>no</allow_inactive>
+        <allow_active>auth_self</allow_active>
+      </defaults>
+    </action>
+</policyconfig>' > /usr/share/polkit-1/actions/com.bitwarden.Bitwarden.policy
 
 #install all the downloaded rpms
 dnf5 install -y /tmp/rpms/*
