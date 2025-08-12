@@ -12,7 +12,6 @@ dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with br
 # useful packages 
 dnf5 -y install acpid kde-connect speech-dispatcher android-tools 
 
-
 #copr install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
 dnf5 -y install webapp-manager 
@@ -24,8 +23,9 @@ mkdir /opt
 rm /root
 mkdir /root
 
-#install zed editor
-curl -f https://zed.dev/install.sh | sh
+#get terra repo
+dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+dnf5 -y install zed
 
 #create directory for custom rpm download and install
 mkdir /tmp/rpms
