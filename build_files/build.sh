@@ -28,6 +28,10 @@ mkdir /root
 dnf5 -y config-manager setopt terra.enabled=1
 dnf5 -y install zed
 dnf5 -y config-manager setopt terra.enabled=0
+# fix zed execution to zeditor (idk why but it works)
+sed -i 's/TryExec=zed/TryExec=zeditor/g' /usr/share/applications/dev.zed.Zed.desktop
+sed -i 's/Exec=zed %U/Exec=zeditor %U/g' /usr/share/applications/dev.zed.Zed.desktop
+sed -i 's/Exec=zed --new %U/Exec=zeditor --new %U/g' /usr/share/applications/dev.zed.Zed.desktop
 
 #create directory for custom rpm download and install
 mkdir /tmp/rpms
