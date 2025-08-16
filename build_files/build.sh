@@ -23,7 +23,7 @@ mkdir /opt
 rm /root
 mkdir /root
 
-#get terra repo
+#get terra repo (repo is already present in universal blue images for now)
 #dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 dnf5 -y config-manager setopt terra.enabled=1
 dnf5 -y install zed
