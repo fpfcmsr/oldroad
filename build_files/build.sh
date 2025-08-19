@@ -28,7 +28,7 @@ mkdir /root
 dnf5 -y config-manager setopt terra.enabled=1
 dnf5 -y install zed
 dnf5 -y config-manager setopt terra.enabled=0
-# fix zed execution to zeditor (idk why but it works) - do it twice bc currently theres a commit with the fix that hasn't been merged yet. 
+# fix zed execution to zeditor so as to not conflict with zfs - do it twice bc currently theres a commit with the fix that hasn't been merged yet. 
 sed -i 's/Exec=zeditor/Exec=zed/g' /usr/share/applications/dev.zed.Zed.desktop
 sed -i 's/Exec=zed/Exec=zeditor/g' /usr/share/applications/dev.zed.Zed.desktop
 
