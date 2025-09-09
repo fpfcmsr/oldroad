@@ -23,6 +23,10 @@ mkdir /opt
 rm /root
 mkdir /root
 
+#microsoft fonts install
+dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
+rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
 #get terra repo (repo is already present in universal blue images for now)
 #dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 dnf5 -y config-manager setopt terra.enabled=1
@@ -91,10 +95,6 @@ ls -a /usr/share/factory/root
 #sudo dnf5 -y copr enable hhd-dev/hhd
 #sudo dnf5 -y install hhd adjustor hhd-ui
 #sudo dnf5 -y copr disable hhd-dev/hhd
-
-#microsoft fonts install
-#dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
-#rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 #install specific brother printers (no longer needed)
 #curl --retry 3 -Lo /tmp/rpms/mfcl2710dwpdrv-4.0.0-1.i386.rpm "https://download.brother.com/welcome/dlf103525/mfcl2710dwpdrv-4.0.0-1.i386.rpm"
