@@ -12,6 +12,10 @@ dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with br
 # useful packages 
 dnf5 -y install acpid kde-connect speech-dispatcher android-tools
 
+# vscodium
+curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
+dnf5 -y install codium
+
 #copr install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
 dnf5 -y install webapp-manager 
