@@ -10,7 +10,9 @@ set -ouex pipefail
 dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with brew
 
 # useful packages 
-dnf5 -y install acpid kde-connect speech-dispatcher android-tools keepassxc
+dnf5 -y install acpid kde-connect speech-dispatcher android-tools keepassxc gcc make ripgrep fd-find unzip neovim
+
+
 
 # vscodium
 dnf5 -y remove code
