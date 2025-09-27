@@ -33,13 +33,13 @@ dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 #get terra repo (repo is already present in universal blue images for now)
-dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+#dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 dnf5 -y config-manager setopt terra.enabled=1
 dnf5 -y install zed
 dnf5 -y config-manager setopt terra.enabled=0
 # fix zed execution to zeditor so as to not conflict with zfs - do it twice bc currently theres a commit with the fix that hasn't been merged yet. 
-sed -i 's/Exec=zeditor/Exec=zed/g' /usr/share/applications/dev.zed.Zed.desktop
-sed -i 's/Exec=zed/Exec=zeditor/g' /usr/share/applications/dev.zed.Zed.desktop
+#sed -i 's/Exec=zeditor/Exec=zed/g' /usr/share/applications/dev.zed.Zed.desktop
+#sed -i 's/Exec=zed/Exec=zeditor/g' /usr/share/applications/dev.zed.Zed.desktop
 
 #create directory for custom rpm download and install
 mkdir /tmp/rpms
