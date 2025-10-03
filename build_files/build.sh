@@ -14,10 +14,10 @@ dnf5 -y install acpid kde-connect speech-dispatcher android-tools keepassxc gcc 
 
 
 
-# vscodium
+# remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code
-curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
-dnf5 -y install codium
+#curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
+#dnf5 -y install codium
 
 #copr install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
