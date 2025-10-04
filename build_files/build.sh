@@ -12,8 +12,11 @@ dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with br
 # useful packages 
 dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip neovim
 
+# fix fonts
+dnf5 -y remove google-noto-*
+dnf5 -y install google-droid-fonts-al
 # remove vscode (and realize that vscodium is not it...)
-dnf5 -y remove code
+dnf5 -y remove code 
 #curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
 #dnf5 -y install codium
 
