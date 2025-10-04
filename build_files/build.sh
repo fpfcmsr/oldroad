@@ -7,7 +7,7 @@ set -ouex pipefail
 
 #install packages for dolphin shortcuts
 #brew install jpegoptim optipng pandoc qpdf  xclip foremost rdfind rhash testdisk expect
-dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with brew
+dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
 
 # useful packages 
 dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip neovim
