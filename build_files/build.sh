@@ -14,7 +14,8 @@ dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgr
 
 # fix fonts
 dnf5 -y remove google-noto-*
-dnf5 -y install google-droid-fonts-al
+dnf5 -y install google-droid-fonts-all
+
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code 
 #curl --output-dir /etc/yum.repos.d -LO https://repo.vscodium.dev/vscodium.repo
