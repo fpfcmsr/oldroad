@@ -11,8 +11,25 @@ dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with br
 
 # useful packages 
 dnf5 -y install acpid kde-connect speech-dispatcher android-tools keepassxc gcc make ripgrep fd-find unzip neovim
+touch /usr/share/polkit-1/actions/org.keepassxc.KeePassXC.policy.in
+echo '<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+<policyconfig>
+  <vendor>KeePassXC Developers</vendor>
+  <vendor_url></vendor_url>
+  <icon_name>@APP_ICON_NAME@</icon_name>
 
-
+  <action id="org.keepassxc.KeePassXC.unlockDatabase">
+    <description>Quick Unlock for a KeePassXC Database</description>
+    <message>Authentication is required to unlock a KeePassXC Database</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_self</allow_active>
+    </defaults>
+  </action>
+</policyconfig>' >> /usr/share/polkit-1/actions/org.keepassxc.KeePassXC.policy.in
 
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code
