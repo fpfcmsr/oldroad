@@ -10,7 +10,10 @@ set -ouex pipefail
 dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
 
 # useful packages 
-dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip neovim
+dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip 
+
+# editors
+dnf4 -y install helix neovim
 
 # fix fonts
 dnf5 -y remove google-noto-*
@@ -28,9 +31,6 @@ dnf5 -y copr disable bazzite-org/webapp-manager
 
 rm /opt
 mkdir /opt
-
-rm /root
-mkdir /root
 
 #create directory for custom rpm download and install
 mkdir /tmp/rpms
@@ -67,12 +67,6 @@ mv /opt /usr/share/factory
 ln -s /var/opt /opt
 ls -a /usr/share/factory/opt
 
-#mkdir /usr/share/factory/root
-mv /root /usr/share/factory
-ln -s /var/root /root
-ls -a /usr/share/factory/root
-
-
 # currently not installing these: 
 
 #microsoft fonts install
@@ -91,12 +85,12 @@ ls -a /usr/share/factory/root
 # btrfs assistant
 #dnf5 -y install btrfs-assistant
 
-#for phone integration via usb
+#for phone integration via usb (working kde-connect supersedes this)
 #dnf5 -y copr enable zeno/scrcpy
 #dnf5 -y install scrcpy 
 #dnf5 -y copr disable zeno/scrcpy
 
-#copr install python validity for fingerprint reader
+#copr install python validity for fingerprint reader (not needed)
 #dnf5 -y copr enable sneexy/python-validity
 #dnf5 -y install open-fprintd fprintd-clients fprintd-clients-pam python3-validity
 #dnf5 -y copr disable sneexy/python-validity
