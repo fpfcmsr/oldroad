@@ -13,7 +13,7 @@ dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others 
 dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip 
 
 # editors
-dnf4 -y install helix neovim
+dnf5 -y install helix neovim
 
 # fix fonts
 dnf5 -y remove google-noto-*
