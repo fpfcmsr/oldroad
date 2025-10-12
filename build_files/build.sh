@@ -10,7 +10,8 @@ set -ouex pipefail
 dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
 
 # useful packages 
-dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip meld
+# flatpak install meld
+dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip 
 
 # editors
 dnf5 -y install helix neovim 
