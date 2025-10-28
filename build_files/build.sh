@@ -17,10 +17,9 @@ dnf5 -y remove ptyxis
 # editors
 #dnf5 -y install helix neovim 
 
-
 # fix fonts
-dnf5 -y remove google-noto-*
-dnf5 -y install google-droid-fonts-all
+dnf5 -y remove google-noto-sans*
+dnf5 -y remove google-noto-serif*
 
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code 
