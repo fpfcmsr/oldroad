@@ -11,7 +11,7 @@ dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others 
 
 # useful packages 
 # flatpak install meld
-dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip konsole waydroid nmap
+dnf5 -y install acpid kde-connect speech-dispatcher android-tools gcc make ripgrep fd-find unzip konsole waydroid nmap ipmitool
 dnf5 -y remove ptyxis
 
 # editors
