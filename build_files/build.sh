@@ -18,18 +18,21 @@ dnf5 -y remove ptyxis
 #dnf5 -y install helix neovim 
 
 #netbird
-sudo tee /etc/yum.repos.d/netbird.repo <<EOF
-[netbird]
-name=netbird
-baseurl=https://pkgs.netbird.io/yum/
-enabled=1
-gpgcheck=0
-gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
-repo_gpgcheck=1
-EOF
-dnf -y config-manager addrepo --overwrite --from-repofile=/etc/yum.repos.d/netbird.repo
+#sudo tee /etc/yum.repos.d/netbird.repo <<EOF
+#[netbird]
+#name=netbird
+#baseurl=https://pkgs.netbird.io/yum/
+#enabled=1
+#gpgcheck=0
+#gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
+#repo_gpgcheck=1
+#EOF
+#dnf -y config-manager addrepo --overwrite --from-repofile=/etc/yum.repos.d/netbird.repo
 dnf5 -y remove tailscale
-dnf -y install netbird netbird-ui libappindicator-gtk3 libappindicator
+dnf5 -y copr enable jsbillings/netbird 
+dnf5 -y install netbird
+dnf5 -y copr disable jsbillings/netbird 
+#dnf -y install netbird netbird-ui libappindicator-gtk3 libappindicator
 
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code 
