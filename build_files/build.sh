@@ -17,6 +17,9 @@ dnf5 -y remove ptyxis
 # editors
 #dnf5 -y install helix neovim 
 
+#netbird
+curl -fsSL https://pkgs.netbird.io/install.sh | sh
+dnf5 -y remove tailscale
 
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code 
