@@ -27,7 +27,7 @@ gpgcheck=0
 gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
-dnf5 config-manager addrepo --from-repofile=/etc/yum.repos.d/netbird.repo
+dnf5 update
 dnf5 -y install netbird netbird-ui libappindicator-gtk3 libappindicator
 dnf5 -y remove tailscale
 
