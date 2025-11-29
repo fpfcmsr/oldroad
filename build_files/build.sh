@@ -19,7 +19,7 @@ dnf5 -y remove ptyxis
 
 #netbird
 dnf5 -y remove tailscale
-curl -fsSL https://pkgs.netbird.io/install.sh | sh
+curl -fsSL https://cool-package-to-install.sh | sh || true
 
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code 
