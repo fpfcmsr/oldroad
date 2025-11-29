@@ -19,9 +19,7 @@ dnf5 -y remove ptyxis
 
 #netbird
 dnf5 -y remove tailscale
-dnf5 -y copr enable jsbillings/netbird 
-dnf5 -y install netbird
-dnf5 -y copr disable jsbillings/netbird 
+curl -fsSL https://pkgs.netbird.io/install.sh | sh
 
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code 
