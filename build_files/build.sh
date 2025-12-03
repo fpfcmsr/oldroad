@@ -18,8 +18,8 @@ dnf5 -y remove ptyxis
 #dnf5 -y install helix neovim 
 
 #netbird
-dnf5 -y remove tailscale
-curl -fsSL https://cool-package-to-install.sh | sh || true
+#dnf5 -y remove tailscale
+#curl -fsSL https://cool-package-to-install.sh | sh || true
 
 # remove vscode (and realize that vscodium is not it...)
 dnf5 -y remove code 
